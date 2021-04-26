@@ -20,9 +20,8 @@ build:
     # Read more about steps on our dev center:
     # https://devcenter.wercker.com/development/steps/
   steps:
-  steps:
-    - inokappa/terraform-install:
-        version: 0.15.0
+    - jyotti/install-terraform:
+      version: 0.15.0
     - script:
         name: echo
         code: |
