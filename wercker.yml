@@ -30,5 +30,5 @@ build:
         name: echo
         code: |
           terrafrom plan
-       build:
+          build:
   
