@@ -20,11 +20,15 @@ build:
     # Read more about steps on our dev center:
     # https://devcenter.wercker.com/development/steps/
   steps:
+    - script:
+        name: installunzip
+        code: |
+          apt-get install unzip curl
     - jyotti/install-terraform:
       version: 0.15.0
     - script:
         name: echo
         code: |
           terrafrom plan
-          build:
+       build:
   
