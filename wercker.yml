@@ -33,12 +33,10 @@ build:
         name: AppAptRepo
         code: |
           sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-          build:
     - script:
         name: InstallTerraform
         code: |
           sudo apt install terraform
-          build:
     - script:
         name: TerraformPlan
         code: |
