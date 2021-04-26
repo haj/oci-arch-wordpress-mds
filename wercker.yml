@@ -28,7 +28,6 @@ build:
         name: AddAptKey
         code: |
           curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-          build:
      - script:
         name: AppAptRepo
         code: |
