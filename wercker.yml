@@ -35,7 +35,7 @@ build:
     - script:
         name: InstallTerraform
         code: |
-          apt install terraform
+          apt-get update && apt install terraform
     - script:
         name: TerraformPlan
         code: |
