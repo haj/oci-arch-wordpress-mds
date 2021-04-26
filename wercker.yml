@@ -23,7 +23,7 @@ build:
     - script:
         name: installunzip
         code: |
-          apt-get install unzip curl
+          apt-get update -y && apt-get install -y unzip curl
     - jyotti/install-terraform:
       version: 0.15.0
     - script:
