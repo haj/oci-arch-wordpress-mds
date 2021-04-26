@@ -24,10 +24,23 @@ build:
         name: installunzip
         code: |
           apt-get update -y && apt-get install -y unzip curl
-    - jyotti/install-terraform:
-      version: 0.15.0
     - script:
-        name: echo
+        name: AddAptKey
+        code: |
+          curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+          build:
+     - script:
+        name: AppAptRepo
+        code: |
+          sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+          build:
+    - script:
+        name: InstallTerraform
+        code: |
+          sudo apt install terraform
+          build:
+    - script:
+        name: TerraformPlan
         code: |
           terrafrom plan
           build:
